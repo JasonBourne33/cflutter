@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     Map userInfo={
       "username":"zhangsan",
       "age":20
@@ -39,11 +40,13 @@ class _HomePageState extends State<HomePage> {
             child: Text("post"),
             onPressed: _postData,
           ),
-          // ElevatedButton(
-          //   child: Text("get"),
-          //   onPressed: _pushNamed(context,"/http"),
-          // ),
-
+          ElevatedButton(
+            child: Text("getdata"),
+            onPressed:(){
+              Navigator.pushNamed(context,"/http");
+            },
+          ),
+          SizedBox(height: 20,),
         ],
       )
     );
@@ -66,3 +69,12 @@ _postData() async {
   print('Response status: ${response.statusCode}');
   print('Response body: ${response.body}');
 }
+
+_pushNamed(BuildContext context) async {
+  var url = Uri.parse('https://jd.itying.com/api/pcate');
+  var response = await http.get(url);
+  print('Response status: ${response.statusCode}');
+  print('Response body: ${response.body}');
+}
+
+
