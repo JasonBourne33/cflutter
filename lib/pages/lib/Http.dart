@@ -1,6 +1,6 @@
-
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
@@ -13,28 +13,41 @@ class HttpDemo extends StatefulWidget {
 }
 
 class _HttpDemoState extends State<HttpDemo> {
-  List _list=[];
+  List _list = [];
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     this._getData();
   }
+
   _getData() async {
-    var url = Uri.parse('https://jd.itying.com/api/pcate');
+    var url =
+        Uri.parse('http://47.112.147.20:8080/ssm-crud-0.0.1-SNAPSHOT/empsjson');
     var response = await http.get(url);
-    if(response.statusCode==200) {
+    if (response.statusCode == 200) {
       print(json.decode(response.body));
-      setState((){
-         this._list=json.decode(response.body)["result"];
+      setState(() {
+        this._list = json.decode(response.body)["msg"];
       });
       // 22.24
-}
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
-
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("request data demo"),
+        ),
+        body: this._list.length > 0
+            ? ListView.builder(
+                itemCount: this._list.length,
+                itemBuilder: (context, index) {
+                  return ListTile(title: this._list[index]["title"]);
+                },
+              )
+            : Text("length~~~"));
   }
 }

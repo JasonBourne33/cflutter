@@ -1,3 +1,7 @@
+cflutter
+2.16
+file:///C:/Users/Administrator/AndroidStudioProjects/cflutter/
+file:///C:/Users/Administrator/AndroidStudioProjects/cflutter/lib/
 async
 2.12
 file:///D:/flutter/.pub-cache/hosted/pub.flutter-io.cn/async-2.8.2/
@@ -110,8 +114,4 @@ flutter_test
 2.12
 file:///D:/flutter/packages/flutter_test/
 file:///D:/flutter/packages/flutter_test/lib/
-cflutter
-2.16
-file:///G:/AndroidProject/cflutter/
-file:///G:/AndroidProject/cflutter/lib/
 2
