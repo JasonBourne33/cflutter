@@ -27,9 +27,10 @@ class _HttpDemoState extends State<HttpDemo> {
         Uri.parse('http://47.112.147.20:8080/ssm-crud-0.0.1-SNAPSHOT/empsjson');
     var response = await http.get(url);
     if (response.statusCode == 200) {
-      print(json.decode(response.body));
+      // print(json.decode(response.body));
+      print(json.decode(response.body)["extend"]["pageInfo"]["list"]);
       setState(() {
-        this._list = json.decode(response.body)["msg"];
+        this._list = json.decode(response.body)["extend"]["pageInfo"]["list"];
       });
       // 22.24
     }
@@ -42,12 +43,13 @@ class _HttpDemoState extends State<HttpDemo> {
           title: Text("request data demo"),
         ),
         body: this._list.length > 0
+            // ? Text("length=0  qwq"+_list.length.toString())
             ? ListView.builder(
                 itemCount: this._list.length,
                 itemBuilder: (context, index) {
                   return ListTile(title: this._list[index]["title"]);
                 },
               )
-            : Text("length~~~"));
+            : Text("length=0  qwq"+_list.length.toString()));
   }
 }
