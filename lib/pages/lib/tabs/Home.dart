@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             child: Text("getemps"),
             onPressed:(){
-              Navigator.pushNamed(context,"/http");
+              Navigator.pushNamed(context,"/DioListview");
             },
             // onPressed: _getData,
           ),
@@ -53,9 +53,9 @@ class _HomePageState extends State<HomePage> {
             onPressed: _postData,
           ),
           ElevatedButton(
-            child: Text("getdata"),
+            child: Text("heimaDio"),
             onPressed:(){
-              Navigator.pushNamed(context,"/http");
+              Navigator.pushNamed(context,"/heimaDio");
             },
           ),
           SizedBox(height: 20,),

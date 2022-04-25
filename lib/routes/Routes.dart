@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../pages/lib/Tabs.dart';
-import '../pages/lib/Http.dart';
-import '../movie/HeimaDioMovieList.dart';
+import '../pages/lib/DioListview.dart';
+import '../movie/MyHome.dart';
 
 //配置路由,定义Map类型的routes,Key为String类型，Value为Function类型
 final Map<String,Function> routes={
       '/':(context)=>Tabs(),
-      '/http':(context)=>HttpDemo(),
-      // '/heimaDio':(context)=>HeimaDioMovieList(),
+      '/DiaListview':(context)=>DioListview(),
+      '/heimaDio':(context)=>MyHome(),
 
       // '/form':(context)=>FormPage(),
       // '/product':(context)=>ProductPage(),

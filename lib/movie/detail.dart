@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MovieDetail extends StatefulWidget {
-  MovieDetail({required Key key, required this.id, required this.title})
+  MovieDetail({Key? key, required this.id, required this.title})
       : super(key: key);
   final String id;
   final String title;
